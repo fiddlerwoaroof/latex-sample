@@ -81,7 +81,8 @@
             latexmk -lualatex sample.tex;
           '';
           installPhase = ''
-            cp sample.pdf $out
+            mkdir "$out"
+            cp sample.pdf "$out"
           '';
         };
       };
