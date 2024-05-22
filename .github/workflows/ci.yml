@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: cachix/install-nix-action@v24
+      - uses: cachix/install-nix-action@v27
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
-      - uses: cachix/cachix-action@vXX
+      - uses: cachix/cachix-action@v15
         with:
           name: fwoar-greenhouse
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
