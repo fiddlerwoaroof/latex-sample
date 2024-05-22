@@ -28,6 +28,10 @@ jobs:
 
       - name: Run a multi-line script
         run: |
+          nix build --json .\#texpkgs \
+          | jq -r '.[].outputs | to_entries[].value' \
+          | cachix push fwoar-greenhouse
+
           nix build --print-build-logs
 
       - uses: actions/upload-artifact@v3

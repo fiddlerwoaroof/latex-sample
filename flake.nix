@@ -60,6 +60,7 @@
       packages = {
         # inherit fonts;
 
+        inherit texpkgs;
         default = pkgs.stdenv.mkDerivation {
           name = "sample-pdf";
           version = "0.0.0";
