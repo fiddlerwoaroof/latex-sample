@@ -20,6 +20,12 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
+      - uses: cachix/cachix-action@vXX
+        with:
+          name: fwoar-greenhouse
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          extraPullNames: nix-community
+
       - name: Run a multi-line script
         run: |
           nix build --print-build-logs
