@@ -1,3 +1,3 @@
 This is a demonstration of using nix to build Latex with minimal dependencies.
-Locally, you should be able to run src_bash{nix build} and =result/sample.pdf= will be the results of building =src/sample.tex=.
-If you'd like to speed up this build, src_bash{cachix use latex-sample} should avoid rebuilding the custom texpkgs.
+Locally, you should be able to run src_bash[:exports code]{nix build} and =result/sample.pdf= will be the results of building =src/sample.tex=.
+If you'd like to speed up this build, src_bash[:exports code]{cachix use latex-sample} should avoid rebuilding the custom texpkgs.
