@@ -7,3 +7,6 @@ combined.png: result
 
 result: flake.nix flake.lock src/sample.tex
 	nix build . --print-build-logs
+
+cachix:
+	nix build --print-build-logs --json .\#texpkgs | jq -r '.[].outputs | to_entries[].value' | cachix push latex-sample

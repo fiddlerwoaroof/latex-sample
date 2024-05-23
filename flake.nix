@@ -16,11 +16,8 @@
           (pkgs.texlive)
           scheme-basic
           alegreya
-          etoolbox
-          fontspec
           geometry
           hyperref
-          intcalc
           latexmk
           lipsum
           luahbtex
@@ -73,12 +70,12 @@
             export TEXMFHOME="$(mktemp -d)"
             export TEXMFVAR="$TEXMFHOME/texmf-var/"
             mkdir -p "$TEXMFVAR"
+            chmod -R +w "$TEXMFVAR"
             #export FONTCONFIG_PATH="$'{fonts}"
             #export OSFONTDIR="$'{fonts}/fonts"
             #cp -R $'{fonts}/texmf-var/ "$TEXMFVAR"
-            chmod -R +w "$TEXMFVAR"
             #echo FONTCONFIG_PATH is $FONTCONFIG_PATH
-            #luaotfload-tool  --find='Dove Text' --fuzzy
+            #luaotfload-tool  --find='Alegreya' --fuzzy
             latexmk -lualatex sample.tex;
           '';
           installPhase = ''
