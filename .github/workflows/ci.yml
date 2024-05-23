@@ -22,9 +22,10 @@ jobs:
 
       - uses: cachix/cachix-action@v15
         with:
-          name: fwoar-greenhouse
+          name: latex-sample
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-          extraPullNames: nix-community
+          #signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+          extraPullNames: nix-community,fwoar-greenhouse
 
       - name: Run a multi-line script
         run: |
