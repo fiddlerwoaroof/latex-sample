@@ -25,7 +25,7 @@ jobs:
           name: latex-sample
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
           #signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-          extraPullNames: nix-community,fwoar-greenhouse
+          extraPullNames: nix-community
 
       - name: Run a multi-line script
         run: |
